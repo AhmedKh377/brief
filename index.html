@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VISUAL | ابدأ مشروعك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--card:#0d0c0a;--line:rgba(212,175,55,.22);--gold:#d4af37;--gold2:#f6e27a;--gold3:#9a7b1c;--ink:#f4efe6;--mute:#a79f8d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Cairo',sans-serif;min-height:100vh;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(60% 40% at 50% 0%,rgba(212,175,55,.16),transparent 70%),radial-gradient(40% 30% at 90% 100%,rgba(212,175,55,.08),transparent 70%);pointer-events:none;z-index:0}
+.ring{position:fixed;border:1px solid var(--line);border-radius:50%;pointer-events:none;z-index:0;animation:spin 40s linear infinite}
+.ring.r1{width:620px;height:620px;top:-260px;left:50%;margin-left:-310px;border-style:dashed}
+.ring.r2{width:900px;height:900px;top:-420px;left:50%;margin-left:-450px;animation-direction:reverse;animation-duration:70s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:28px 18px 70px}
+header{text-align:center;padding:36px 0 26px}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;letter-spacing:.55em;color:var(--gold);margin-bottom:6px}
+.mark{width:58px;height:58px;margin:0 auto 14px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold2);box-shadow:0 0 30px rgba(212,175,55,.35),inset 0 0 18px rgba(212,175,55,.15)}
+h1{font-weight:900;font-size:clamp(28px,6.5vw,46px);line-height:1.35;background:linear-gradient(100deg,var(--gold3),var(--gold2) 35%,var(--gold) 55%,var(--gold2) 80%,var(--gold3));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.sub{color:var(--mute);margin-top:12px;font-size:16px;line-height:1.9;max-width:520px;margin-inline:auto}
+.badge{display:inline-block;margin-top:16px;padding:6px 16px;border:1px solid var(--line);border-radius:99px;color:var(--gold2);font-size:13px;background:rgba(212,175,55,.06)}
+form{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--line);border-radius:20px;padding:26px 20px;margin-top:10px;backdrop-filter:blur(4px)}
+fieldset{border:0;margin-bottom:26px}
+legend{font-weight:700;color:var(--gold2);font-size:17px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);width:100%}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.f{margin-bottom:14px}
+label{display:block;font-size:14px;color:var(--ink);margin-bottom:6px;font-weight:600}
+label small{color:var(--mute);font-weight:400}
+input,textarea,select{width:100%;background:#080807;border:1px solid rgba(212,175,55,.18);border-radius:12px;color:var(--ink);font-family:inherit;font-size:15px;padding:13px 14px;transition:.25s}
+textarea{min-height:96px;resize:vertical;line-height:1.7}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+::placeholder{color:#5f5a4d}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:18px 52%,24px 52%;background-size:6px 6px;background-repeat:no-repeat}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{display:none}
+.chips label{margin:0;padding:9px 16px;border:1px solid rgba(212,175,55,.25);border-radius:99px;cursor:pointer;font-size:14px;color:var(--mute);transition:.2s}
+.chips input:checked+label{background:linear-gradient(120deg,var(--gold3),var(--gold));color:#120e00;border-color:var(--gold);font-weight:700}
+.up{border:1px dashed rgba(212,175,55,.4);border-radius:14px;padding:20px;text-align:center;cursor:pointer;color:var(--mute);font-size:14px;transition:.25s}
+.up:hover{background:rgba(212,175,55,.06);color:var(--gold2)}
+.up input{display:none}
+#fl{margin-top:10px;font-size:13px;color:var(--gold2);line-height:1.8}
+.btn{position:relative;overflow:hidden;width:100%;border:0;border-radius:14px;padding:17px;font-family:inherit;font-weight:900;font-size:18px;color:#120e00;cursor:pointer;background:linear-gradient(110deg,var(--gold3),var(--gold),var(--gold2),var(--gold));box-shadow:0 8px 34px rgba(212,175,55,.3);transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 42px rgba(212,175,55,.45)}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sh 3.2s infinite}
+@keyframes sh{to{left:140%}}
+.btn:disabled{opacity:.6;cursor:wait}
+.err{color:#ff8a7a;font-size:14px;margin-top:12px;text-align:center;min-height:20px}
+.note{text-align:center;color:var(--mute);font-size:13px;margin-top:14px}
+.thanks{display:none;text-align:center;padding:70px 20px;border:1px solid var(--line);border-radius:20px;background:rgba(212,175,55,.03);margin-top:10px;animation:in .8s ease}
+@keyframes in{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.tick{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:40px;color:var(--gold2);box-shadow:0 0 40px rgba(212,175,55,.4)}
+.thanks h2{font-size:30px;font-weight:900;color:var(--gold2);margin-bottom:10px}
+.thanks p{color:var(--mute);line-height:2;max-width:420px;margin:auto}
+.hp{position:absolute;top:0;right:0;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden}
+.contact{text-align:center;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.contact p{color:var(--mute);font-size:14px;margin-bottom:14px}
+.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold2);border-radius:99px;padding:12px 34px;font-family:inherit;font-weight:700;font-size:16px;cursor:pointer;transition:.25s}
+.ghost:hover{background:rgba(212,175,55,.12);box-shadow:0 0 26px rgba(212,175,55,.25)}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.on{display:flex}
+.box{position:relative;width:100%;max-width:480px;max-height:92vh;overflow:auto;background:#0b0a08;border:1px solid var(--line);border-radius:20px;padding:24px 20px;box-shadow:0 0 60px rgba(212,175,55,.15);animation:in .35s ease}
+.box h3{color:var(--gold2);font-size:20px;margin-bottom:4px}
+.box .hint{color:var(--mute);font-size:13px;margin-bottom:16px}
+.x{position:absolute;top:12px;left:14px;background:none;border:0;color:var(--mute);font-size:26px;cursor:pointer;line-height:1}
+.mdone{display:none;text-align:center;padding:26px 6px}
+.mdone .tick{width:70px;height:70px;font-size:32px}
+.mdone h3{font-size:22px;margin-bottom:8px}
+.mdone p{color:var(--mute);line-height:1.9;font-size:15px}
+.thanks p+p{margin-top:12px}
+.tref{margin:22px auto 0;display:inline-block;padding:10px 20px;border:1px solid var(--line);border-radius:12px;color:var(--gold2);font-size:15px}
+.tref b{letter-spacing:.08em;direction:ltr;unicode-bidi:embed}
+.tline{height:1px;background:var(--line);max-width:380px;margin:28px auto 22px}
+.tbrand{font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:.45em;color:var(--gold2);font-size:18px;padding-inline-start:.45em}
+.thanks .tick{border-width:1.5px}
+.agree{display:flex;align-items:flex-start;gap:12px;margin:4px 0 18px;padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(212,175,55,.04);cursor:pointer;font-size:14px;line-height:1.8;font-weight:600;color:var(--ink)}
+.agree input{appearance:none;-webkit-appearance:none;flex:0 0 22px;width:22px;height:22px;margin-top:3px;padding:0;border:1.5px solid var(--gold);border-radius:6px;background:#080807;display:grid;place-content:center;cursor:pointer}
+.agree input::after{content:"";width:6px;height:11px;border:solid #120e00;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);transition:.15s;margin-top:-2px}
+.agree input:checked{background:linear-gradient(120deg,var(--gold3),var(--gold2))}
+.agree input:checked::after{transform:rotate(45deg) scale(1)}
+.agree input:focus-visible{box-shadow:0 0 0 3px rgba(212,175,55,.3)}
+.agree.bad{border-color:#ff8a7a}
+.thumbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.th{position:relative;width:78px;height:78px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#080807}
+.th img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.th .rm{position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.75);color:#fff;font-size:17px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.th .rm:active{background:#c0392b}
+.cnt{margin-top:8px;font-size:13px;color:var(--gold2)}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="ring r1"></div><div class="ring r2"></div>
+<div class="wrap">
+<header>
+  <div class="mark">V</div>
+  <div class="logo">VISUAL</div>
+  <h1>حدّثنا عن علامتك التجارية<br>ونُعدّ لك تصميمين تجريبيين</h1>
+  <p class="sub">املأ البيانات أدناه، وسيقوم فريق VISUAL بمراجعة طلبك والبدء بتصميم أول منشورين لعلامتك بما يتوافق مع هويتها.</p>
+  <span class="badge">تجربة أولى دون أي التزام</span>
+</header>
+
+<form id="form" novalidate>
+  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
+
+  <fieldset>
+    <legend>بياناتك</legend>
+    <div class="row">
+      <div class="f"><label>الاسم *</label><input name="name" required placeholder="اسمك الكامل"></div>
+      <div class="f"><label>رقم الواتساب *</label><input name="whatsapp" required type="tel" dir="ltr" style="text-align:right" placeholder="+965 ..."></div>
+    </div>
+    <div class="f"><label>البريد الإلكتروني <small>(اختياري)</small></label><input name="email" type="email" dir="ltr" style="text-align:right" placeholder="name@email.com"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>عن العلامة التجارية</legend>
+    <div class="row">
+      <div class="f"><label>اسم العلامة التجارية *</label><input name="brand" required placeholder="اسم العلامة التجارية"></div>
+      <div class="f"><label>حساب إنستغرام <small>(إن وُجد)</small></label><input name="instagram" dir="ltr" style="text-align:right" placeholder="@brand"></div>
+    </div>
+    <div class="row">
+      <div class="f"><label>مجال العلامة التجارية *</label>
+        <select name="industry" required>
+          <option value="">اختر المجال</option>
+          <option>ملابس وأزياء</option><option>مطاعم وكافيهات</option><option>تجميل وعناية</option>
+          <option>عقارات</option><option>إلكترونيات</option><option>مجوهرات وإكسسوارات</option>
+          <option>خدمات وشركات</option><option>صحة ولياقة</option><option>مجال آخر</option>
+        </select></div>
+      <div class="f"><label>البلد المستهدف</label><input name="country" placeholder="الكويت، الإمارات، ..."></div>
+    </div>
+    <div class="f"><label>وصف موجز للعلامة التجارية ونشاطها *</label><textarea name="about" required placeholder="ماذا تبيع؟ وما الذي يميّزك عن غيرك؟"></textarea></div>
+    <div class="f"><label>الجمهور المستهدف</label><input name="audience" placeholder="مثال: شباب 18-35، سيدات، أصحاب أعمال"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>هوية العلامة التجارية والأسلوب</legend>
+    <div class="f"><label>طابع التصميم المفضل</label>
+      <div class="chips" id="styles">
+        <input type="checkbox" id="s1" value="فخم"><label for="s1">فخم</label>
+        <input type="checkbox" id="s2" value="بسيط"><label for="s2">بسيط</label>
+        <input type="checkbox" id="s3" value="سينمائي"><label for="s3">سينمائي</label>
+        <input type="checkbox" id="s4" value="جريء وملوّن"><label for="s4">جريء وملوّن</label>
+        <input type="checkbox" id="s5" value="هادئ وناعم"><label for="s5">هادئ وناعم</label>
+        <input type="checkbox" id="s6" value="شبابي"><label for="s6">شبابي</label>
+      </div></div>
+    <div class="row">
+      <div class="f"><label>ألوان العلامة التجارية</label><input name="colors" placeholder="مثال: أسود وذهبي"></div>
+      <div class="f"><label>لغة النص في التصميم</label>
+        <select name="lang"><option>العربية</option><option>الإنجليزية</option><option>كلتاهما</option></select></div>
+    </div>
+    <div class="f"><label>شعار العلامة التجارية وصور المنتجات <small>(يمكنك رفع أي عدد من الصور)</small></label>
+      <label class="up" for="files">اضغط هنا لرفع الصور<input id="files" type="file" accept="image/*" multiple></label>
+      <div class="thumbs" id="fl"></div><div class="cnt" id="fc"></div></div>
+    <div class="f"><label>علامات أو حسابات تعجبك <small>(مراجع)</small></label><input name="refs" placeholder="روابط أو أسماء حسابات"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>المنشوران التجريبيان</legend>
+    <div class="f"><label>ما الرسالة أو العرض الذي ترغب في إبرازه؟ *</label><textarea name="brief" required placeholder="منتج جديد، خصم، افتتاح، تعريف بالعلامة التجارية... وأي نص ترغب في كتابته على التصميم"></textarea></div>
+    <div class="f"><label>ملاحظات إضافية</label><textarea name="notes" placeholder="أي تفاصيل أخرى ترغب في إخبارنا بها"></textarea></div>
+  </fieldset>
+
+  <label class="agree" id="agreeBox"><input type="checkbox" id="agree" name="consent"><span>أوافق على استخدام التصميمين التجريبيين ضمن معرض أعمال VISUAL.</span></label>
+  <button class="btn" id="send" type="submit">إرسال الطلب</button>
+  <div class="err" id="err"></div>
+  <p class="note">تصل بياناتك إلى فريق VISUAL فقط، وسنتواصل معك عبر الواتساب.</p>
+</form>
+
+<div class="thanks" id="thanks">
+  <div class="tick">&#10003;</div>
+  <h2>تم استلام طلبك بنجاح!</h2>
+  <p>شكراً لثقتك في VISUAL.</p>
+  <p>وصلتنا تفاصيل علامتك التجارية، وسيقوم فريقنا بمراجعة طلبك والتواصل معك قريباً.</p>
+  <div class="tref">رقم طلبك: <b id="refNo"></b></div>
+  <div class="tline"></div>
+  <div class="tbrand">WE CREATE</div>
+</div>
+<div class="contact">
+  <p>لديك سؤال أو استفسار؟</p>
+  <button class="ghost" id="openC" type="button">تواصل معنا</button>
+</div>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="box">
+    <button class="x" id="closeC" type="button" aria-label="إغلاق">×</button>
+    <div id="mform">
+      <h3 id="mt">تواصل معنا</h3>
+      <p class="hint">اكتب رسالتك وأرفق صوراً إن رغبت، وسنرد عليك في أقرب وقت.</p>
+      <input class="hp" type="text" id="mhp" tabindex="-1" autocomplete="off">
+      <div class="f"><label>اسمك *</label><input id="mname" placeholder="الاسم"></div>
+      <div class="f"><label>رقم الواتساب أو البريد الإلكتروني *</label><input id="mcontact" placeholder="لنتمكن من الرد عليك"></div>
+      <div class="f"><label>رسالتك *</label><textarea id="mmsg" placeholder="اكتب ما ترغب في قوله"></textarea></div>
+      <div class="f"><label class="up" for="mfiles">إرفاق صور <small>(اختياري)</small><input id="mfiles" type="file" accept="image/*" multiple></label><div class="thumbs" id="mfl"></div><div class="cnt" id="mfc"></div></div>
+      <button class="btn" id="msend" type="button">إرسال</button>
+      <div class="err" id="merr"></div>
+    </div>
+    <div class="mdone" id="mdone">
+      <div class="tick">✓</div>
+      <h3>تم إرسال رسالتك</h3>
+      <p>شكرًا لتواصلك مع VISUAL، وسنقوم بالرد عليك في أقرب وقت.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ضع رابط Google Apps Script هنا
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbwY38upthI-5E4Q4oLydIlNDJE_4xT5tuumwYgx1oZ-8srSzyGnZgLAGfWF_-ZfY9vY/exec";
+const MAX_TOTAL = 30 * 1024 * 1024; // أقصى حجم إجمالي للصور المرسلة بعد الضغط
+const mkRef = p => { const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; const d=new Date(); const z=n=>String(n).padStart(2,'0');
+  let t=''; for(let i=0;i<5;i++) t+=c[Math.floor(Math.random()*c.length)];
+  return p+'-'+String(d.getFullYear()).slice(2)+z(d.getMonth()+1)+z(d.getDate())+'-'+t; };
+const $ = s => document.querySelector(s);
+// ===== رفع الصور: معاينة + حذف + أي عدد =====
+const lb = document.createElement('div'); lb.className = 'lb'; lb.innerHTML = '<img alt="">';
+document.body.appendChild(lb);
+lb.addEventListener('click', () => lb.classList.remove('on'));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('on'); });
+
+function makeUploader(input, listEl, cntEl) {
+  const st = { files: [] };
+  let urls = [];
+  const key = f => f.name + '|' + f.size + '|' + f.lastModified;
+  function render() {
+    urls.forEach(u => URL.revokeObjectURL(u)); urls = [];
+    listEl.textContent = '';
+    st.files.forEach((f, i) => {
+      const u = URL.createObjectURL(f); urls.push(u);
+      const box = document.createElement('div'); box.className = 'th';
+      const img = document.createElement('img'); img.src = u; img.alt = f.name;
+      img.addEventListener('click', () => { lb.firstChild.src = u; lb.classList.add('on'); });
+      const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'rm';
+      rm.setAttribute('aria-label', 'حذف الصورة'); rm.textContent = '×';
+      rm.addEventListener('click', () => { st.files.splice(i, 1); render(); });
+      box.append(img, rm); listEl.appendChild(box);
+    });
+    cntEl.textContent = st.files.length ? st.files.length + ' صورة مرفقة (اضغط على الصورة لتكبيرها، أو على × لحذفها)' : '';
+  }
+  input.addEventListener('change', () => {
+    const have = new Set(st.files.map(key));
+    [...input.files].forEach(f => {
+      if (!/^image\//.test(f.type) && !/\.(jpe?g|png|webp|gif|heic|heif)$/i.test(f.name)) return;
+      if (!have.has(key(f))) { st.files.push(f); have.add(key(f)); }
+    });
+    input.value = ''; render();
+  });
+  return { get files() { return st.files.slice(); }, reset() { st.files = []; render(); } };
+}
+
+// ضغط الصور الكبيرة فقط (فوق 1.5MB) عشان الإرسال يكون سريع من غير ما الجودة تتأثر
+async function prep(f) {
+  if (f.size <= 1.5 * 1024 * 1024) return f;
+  try {
+    const bmp = await createImageBitmap(f);
+    const max = 2400, sc = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas');
+    c.width = Math.round(bmp.width * sc); c.height = Math.round(bmp.height * sc);
+    const x = c.getContext('2d'), png = f.type === 'image/png';
+    if (!png) { x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); }
+    x.drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise(r => c.toBlob(r, png ? 'image/png' : 'image/jpeg', 0.88));
+    if (blob && blob.size < f.size) {
+      return new File([blob], f.name.replace(/\.\w+$/, '') + (png ? '.png' : '.jpg'), { type: blob.type });
+    }
+  } catch (e) {}
+  return f;
+}
+const tooBig = fs => fs.reduce((a, f) => a + f.size, 0) * 1.37 > MAX_TOTAL;
+
+const form = $('#form'), err = $('#err'), btn = $('#send');
+const up1 = makeUploader($('#files'), $('#fl'), $('#fc'));
+
+$('#agree').addEventListener('change',()=>{$('#agreeBox').classList.remove('bad');err.textContent=''});
+
+const toB64 = f => new Promise((res, rej) => {
+  const r = new FileReader();
+  r.onload = () => res({name: f.name, mime: f.type, data: r.result.split(',')[1]});
+  r.onerror = rej; r.readAsDataURL(f);
+});
+
+form.addEventListener('submit', async e => {
+  e.preventDefault(); err.textContent = '';
+  if (form.website.value) return;
+  const req = [...form.querySelectorAll('[required]')].filter(x => !x.value.trim());
+  if (req.length) { req[0].focus(); err.textContent = 'يرجى ملء الحقول المطلوبة (*)'; return; }
+  if (!$('#agree').checked) { $('#agreeBox').classList.add('bad'); err.textContent = 'يجب الموافقة على الشرط أعلاه لتتمكن من إرسال الطلب'; $('#agreeBox').scrollIntoView({behavior:'smooth',block:'center'}); return; }
+  btn.disabled = true; btn.textContent = up1.files.length ? 'جاري تجهيز الصور...' : 'جاري الإرسال...';
+  const REF = mkRef('VS');
+  try {
+    const files = await Promise.all(up1.files.map(prep));
+    if (tooBig(files)) { err.textContent = 'حجم الصور كبير جداً، يرجى تقليل عددها أو إرسال الباقي بعد تقديم الطلب عبر "تواصل معنا".'; btn.disabled = false; btn.textContent = 'إرسال الطلب'; return; }
+    btn.textContent = 'جاري الإرسال...';
+    const fd = new FormData(form);
+    const payload = {
+      type: 'brand_trial',
+      ref: REF,
+      portfolioConsent: true,
+      submittedAt: new Date().toISOString(),
+      styles: [...document.querySelectorAll('#styles input:checked')].map(i => i.value).join('، '),
+      files: await Promise.all(files.map(toB64))
+    };
+    for (const [k, v] of fd.entries()) if (k !== 'website') payload[k] = v;
+    await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify(payload) });
+    form.style.display = 'none';
+    document.querySelector('header').style.display = 'none';
+    $('#refNo').textContent = REF;
+    $('#thanks').style.display = 'block';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  } catch (x) {
+    err.textContent = 'حدثت مشكلة أثناء الإرسال، يرجى المحاولة مرة أخرى.';
+    btn.disabled = false; btn.textContent = 'إرسال الطلب';
+  }
+});
+
+// ===== تواصل معنا =====
+const modal=$('#modal');
+const up2=makeUploader($('#mfiles'),$('#mfl'),$('#mfc'));
+$('#openC').onclick=()=>{modal.classList.add('on');$('#mform').style.display='block';$('#mdone').style.display='none'};
+$('#closeC').onclick=()=>modal.classList.remove('on');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('on')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('on')});
+$('#msend').onclick=async()=>{
+  const me=$('#merr'),mb=$('#msend');me.textContent='';
+  if($('#mhp').value)return;
+  const name=$('#mname').value.trim(),contact=$('#mcontact').value.trim(),msg=$('#mmsg').value.trim();
+  if(!name||!contact||!msg){me.textContent='يرجى ملء الحقول المطلوبة (*)';return}
+  mb.disabled=true;mb.textContent=up2.files.length?'جاري تجهيز الصور...':'جاري الإرسال...';
+  try{
+    const files=await Promise.all(up2.files.map(prep));
+    if(tooBig(files)){me.textContent='حجم الصور كبير جداً، يرجى تقليل عددها.';mb.disabled=false;mb.textContent='إرسال';return}
+    mb.textContent='جاري الإرسال...';
+    const payload={type:'contact_message',ref:mkRef('MSG'),submittedAt:new Date().toISOString(),name,contact,message:msg,files:await Promise.all(files.map(toB64))};
+    await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+    $('#mform').style.display='none';$('#mdone').style.display='block';
+    ['mname','mcontact','mmsg'].forEach(i=>$('#'+i).value='');up2.reset();
+  }catch(x){me.textContent='حدثت مشكلة أثناء الإرسال، يرجى المحاولة مرة أخرى.'}
+  mb.disabled=false;mb.textContent='إرسال';
+};
+</script>
+</body>
+</html>
